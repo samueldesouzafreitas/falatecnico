@@ -180,17 +180,38 @@ dialog::backdrop{background:rgba(8,47,43,.45)}
 .slide .un{display:block}
 .aviso{margin:0;font-size:.9rem;color:var(--muted)}
 
-.promo{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:50;width:min(330px,calc(100vw - 2rem));background:var(--card);border:1px solid var(--line);border-top:6px solid var(--lime);border-radius:20px;padding:1.1rem 1.2rem 1.2rem;box-shadow:0 22px 50px rgba(15,76,69,.2);opacity:0;transform:translateY(20px) scale(.96);pointer-events:none;transition:opacity .35s,transform .35s cubic-bezier(.2,.8,.2,1.15)}
-.promo.on{opacity:1;transform:none;pointer-events:auto}
-.promo::after{content:"";position:absolute;right:30px;bottom:-9px;width:18px;height:18px;background:var(--card);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
-.promo h2{font-size:1.15rem;margin:0 1.6rem .3rem 0}
-.promo p{margin:0 0 .8rem;font-size:.95rem;line-height:1.45;color:var(--muted)}
-.promo .cupom{display:flex;gap:.5rem}
-.promo code{flex:1;font:800 1.15rem "Manrope",monospace;letter-spacing:.08em;color:var(--petrol);background:var(--lime-bright);border:2px dashed var(--petrol-soft);border-radius:12px;padding:.45rem .6rem;text-align:center}
-.promo .copiar{font:700 .95rem "Manrope",sans-serif;background:var(--petrol);color:#fff;border:0;border-radius:12px;padding:0 1rem;cursor:pointer}
-.promo .fechar{position:absolute;top:.5rem;right:.6rem;background:none;border:0;font-size:1.5rem;line-height:1;cursor:pointer;color:var(--muted);padding:.2rem .4rem}
-.promo-abrir{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:49;background:var(--lime);color:var(--petrol);border:0;border-radius:999px;padding:.7rem 1.1rem;font:800 .95rem "Manrope",sans-serif;box-shadow:0 10px 24px rgba(15,76,69,.2);cursor:pointer;display:none}
-.promo-abrir.on{display:block}
+.chat{position:fixed;right:1rem;bottom:calc(5.2rem + env(safe-area-inset-bottom,0px));z-index:50;width:min(320px,calc(100vw - 2rem));max-height:calc(100dvh - 7rem - env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 60px rgba(8,47,43,.28);overflow:hidden;opacity:0;transform:translateY(16px) scale(.97);transform-origin:bottom right;pointer-events:none;transition:opacity .3s,transform .3s cubic-bezier(.2,.8,.2,1.1)}
+.chat.on{opacity:1;transform:none;pointer-events:auto}
+.chat-topo{flex:none;background:#128C4B;color:#fff;padding:.75rem .9rem;display:flex;align-items:center;gap:.6rem;position:relative}
+.chat-av{width:36px;height:36px;border-radius:50%;background:var(--lime);display:grid;place-items:center;flex:none;position:relative}
+.chat-av::after{content:"";position:absolute;right:-1px;bottom:0;width:10px;height:10px;border-radius:50%;background:#7CF29C;border:2px solid #128C4B}
+.chat-topo b{display:block;font:800 .95rem "Manrope",sans-serif;line-height:1.2}
+.chat-topo small{color:#D7F5E2;font-size:.78rem}
+.chat-fechar{position:absolute;top:.35rem;right:.45rem;background:none;border:0;color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;padding:.2rem .4rem}
+.chat-corpo{flex:1 1 auto;min-height:0;overflow-y:auto;padding:.8rem .9rem;background:#EFEAE2;display:grid;gap:.55rem;align-content:start}
+.msg{margin:0;background:var(--card);border-radius:4px 14px 14px 14px;padding:.55rem .75rem;font-size:.88rem;line-height:1.4;max-width:94%;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.msg strong{color:var(--petrol)}
+.destaque-orc{display:flex;gap:.5rem;align-items:center;background:#FFE58A;border-radius:12px;padding:.5rem .7rem;font-size:.82rem;line-height:1.35;color:#5A4300;font-weight:700}
+.destaque-orc span{font-size:1.1rem}
+.atalhos{display:flex;flex-wrap:wrap;gap:.35rem}
+.atalhos button{border:1px solid #128C4B;background:var(--card);color:#0B6B39;border-radius:999px;padding:.3rem .65rem;font-weight:700;font-size:.78rem;cursor:pointer}
+.atalhos button:hover{background:#DCF8E6}
+.chat-form{flex:none;display:flex;gap:.45rem;padding:.6rem;border-top:1px solid var(--line);background:var(--card)}
+.chat-form textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:12px;padding:.5rem .7rem;font:inherit;font-size:.9rem;color:var(--ink);background:var(--cream);min-height:40px;max-height:96px}
+.chat-form button{flex:none;width:40px;height:40px;align-self:flex-end;border-radius:50%;border:0;background:#25D366;color:#fff;cursor:pointer;display:grid;place-items:center}
+.chat-form button:hover{background:#1EBE5A}
+.chat-nota{flex:none;margin:0;padding:0 .8rem .55rem;font-size:.72rem;color:var(--muted);text-align:center;background:var(--card)}
+.chat-botao{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:51;display:flex;align-items:center;gap:.6rem;background:#25D366;color:#fff;border:3px solid #fff;border-radius:999px;padding:.45rem 1.1rem .45rem .45rem;font:800 1rem "Manrope",sans-serif;box-shadow:0 10px 30px rgba(18,140,75,.45);cursor:pointer;animation:chama 4s ease-in-out 2s infinite}
+.chat-botao:hover{background:#1EBE5A}
+.chat-botao .ic{width:44px;height:44px;border-radius:50%;background:#128C4B;display:grid;place-items:center;position:relative}
+.chat-botao .ic::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;animation:pulsa 2s ease-out infinite;z-index:-1}
+.chat-botao .badge{position:absolute;top:-6px;right:-6px;min-width:20px;height:20px;border-radius:999px;background:#FFC928;color:#3A2A00;font:800 .72rem "Manrope",sans-serif;display:grid;place-items:center;padding:0 .3rem;border:2px solid #fff}
+@keyframes pulsa{from{transform:scale(1);opacity:.75}to{transform:scale(1.8);opacity:0}}
+@keyframes chama{0%,86%,100%{transform:none}89%{transform:translateY(-6px)}92%{transform:none}95%{transform:translateY(-3px)}}
+.chat-botao small{display:block;font:700 .74rem "Nunito Sans",sans-serif;color:#FFF7C2;text-align:left}
+.chat-botao[aria-expanded="true"]{animation:none}
+@media (max-width:520px){.chat-botao .txt{display:none}.chat-botao{padding:.4rem}.chat-botao .ic{width:52px;height:52px}}
+@media (max-height:620px){.chat-nota{display:none}.destaque-orc{display:none}}
 </style>
 </head>
 <body>
@@ -361,13 +382,32 @@ dialog::backdrop{background:rgba(8,47,43,.45)}
   </form>
 </dialog>
 
-<aside class="promo" id="promo" role="dialog" aria-labelledby="promo-t" aria-hidden="true">
-  <button class="fechar" id="promo-fechar" aria-label="Fechar">×</button>
-  <h2 id="promo-t">Primeiro mês com desconto</h2>
-  <p id="promo-txt"></p>
-  <div class="cupom"><code id="promo-cod"></code><button class="copiar" id="promo-copiar">Copiar</button></div>
+<aside class="chat" id="chat" role="dialog" aria-labelledby="chat-t" aria-hidden="true">
+  <div class="chat-topo">
+    <div class="chat-av"><svg width="26" height="26" viewBox="0 0 28 28" aria-hidden="true"><path d="M18 8h-8v12M10 14h6" fill="none" stroke="#0F4C45" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg></div>
+    <div><b id="chat-t">Fale com o Samuel ao vivo</b><small>Online no WhatsApp agora</small></div>
+    <button class="chat-fechar" id="chat-fechar" aria-label="Fechar">×</button>
+  </div>
+  <div class="chat-corpo">
+    <p class="msg">Oi! Aqui é o <strong>Samuel, da Fala Técnico</strong>. Me conta o que está acontecendo na sua casa que eu te respondo agora pelo WhatsApp.</p>
+    <div class="destaque-orc"><span aria-hidden="true">📸</span>Orçamento grátis: mande uma foto do problema e receba o valor sem compromisso.</div>
+    <div class="atalhos" id="atalhos" aria-label="Mensagens prontas">
+      <button type="button">Quero um orçamento grátis</button>
+      <button type="button">Limpeza de placas solares</button>
+      <button type="button">Limpeza de caixa d'água</button>
+      <button type="button">É uma emergência</button>
+    </div>
+  </div>
+  <form class="chat-form" id="chat-form">
+    <textarea id="chat-msg" rows="1" placeholder="Escreva sua mensagem..." aria-label="Sua mensagem"></textarea>
+    <button type="submit" aria-label="Enviar pelo WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4l17.5-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.99.99 0 0 0-1.4.9L2 9.1c0 .5.4.9.9 1L17 12 2.9 13.9c-.5.1-.9.5-.9 1l.01 4.6c0 .7.7 1.2 1.4.9z"/></svg></button>
+  </form>
+  <p class="chat-nota">Ao enviar, abre o WhatsApp com sua mensagem pronta.</p>
 </aside>
-<button class="promo-abrir" id="promo-abrir">🎁 Cupom</button>
+<button class="chat-botao" id="chat-botao" aria-controls="chat" aria-expanded="false">
+  <span class="ic"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5z" fill="none" stroke="#fff" stroke-width="1.9" stroke-linejoin="round"/><path d="M9.2 7.4c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.1 1.1-1.1 2.7 1.2 3.1 1.3 3.3c.2.2 2.2 3.5 5.5 4.8 2.7 1.1 3.3.9 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4l-2-.9c-.3-.1-.5-.2-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2z" fill="#fff"/></svg><span class="badge" aria-hidden="true">1</span></span>
+  <span class="txt">Fale com a gente<small>Orçamento grátis agora</small></span>
+</button>
 
 <script>
 /* ================= CONFIGURAÇÃO (edite aqui) ================= */
@@ -377,9 +417,8 @@ const WHATSAPP = "5519920138194";
 const LINK_ASSINATURA = "";
 const MENSALIDADE = 19.90;
 const DESCONTO_PREMIUM = 0.5;
-// Cupom do balão
-const CUPOM = "FALA10";
-const TEXTO_PROMO = "Use o código ao assinar o Premium e ganhe 10% de desconto no primeiro mês.";
+// Mensagem que já vem escrita quando a pessoa clica num atalho do chat
+const MSG_PADRAO = "Olá, Samuel! Vim pelo site e quero um orçamento.";
 
 // Tabela de serviços. preco = valor avulso em reais.
 // unidade + qtd = serviço cobrado por quantidade (o cliente escolhe quantas). Ex.: placa solar, m².
@@ -567,7 +606,7 @@ dlg.addEventListener("click", e => { if(e.target===dlg) dlg.close(); });
 const visita=SERVICOS.find(s=>s.id==="visita").preco;
 document.querySelectorAll('[data-visita="cheio"]').forEach(e=>e.textContent=real(visita));
 document.querySelectorAll('[data-visita="meio"]').forEach(e=>e.textContent=real(meio(visita)));
-$("assinar").href = LINK_ASSINATURA || zapLink(`Olá! Quero assinar o Fala Técnico Premium (${real(MENSALIDADE)}/mês). Cupom: ${CUPOM}`);
+$("assinar").href = LINK_ASSINATURA || zapLink(`Olá! Quero assinar o Fala Técnico Premium (${real(MENSALIDADE)}/mês).`);
 $("assinar").target="_blank"; $("assinar").rel="noopener";
 const totalPadrao = s => s.preco*(s.qtd||1);
 $("simula").innerHTML = SERVICOS.map(s=>`<option value="${s.id}" ${s.id==="solar"?"selected":""}>${s.nome}${s.unidade?` (${s.qtd} ${s.qtd>1?s.unidades:s.unidade})`:""}: ${real(totalPadrao(s))}</option>`).join("");
@@ -579,17 +618,23 @@ $("simula").onchange=simular; simular();
 $("zap").href = zapLink("Olá! Quero saber mais sobre o Fala Técnico.");
 $("zap").target="_blank"; $("zap").rel="noopener";
 
-/* balão promocional */
-const promo=$("promo"), abrir=$("promo-abrir");
-$("promo-cod").textContent=CUPOM; $("promo-txt").textContent=TEXTO_PROMO;
-const mostrar = v => { promo.classList.toggle("on",v); promo.setAttribute("aria-hidden",!v); abrir.classList.toggle("on",!v); };
-setTimeout(()=>mostrar(true),3500);
-$("promo-fechar").onclick=()=>mostrar(false);
-abrir.onclick=()=>mostrar(true);
-$("promo-copiar").onclick = async e => {
-  try{ await navigator.clipboard.writeText(CUPOM); }catch{ const r=document.createRange(); r.selectNodeContents($("promo-cod")); getSelection().removeAllRanges(); getSelection().addRange(r); document.execCommand("copy"); }
-  e.target.textContent="Copiado!"; setTimeout(()=>e.target.textContent="Copiar",1800);
-};
+/* chat ao vivo pelo WhatsApp */
+const chat=$("chat"), botao=$("chat-botao"), campo=$("chat-msg");
+const abrirChat = (v, foco=true) => { chat.classList.toggle("on",v); chat.setAttribute("aria-hidden",!v); botao.setAttribute("aria-expanded",v); if(v && foco) setTimeout(()=>campo.focus({preventScroll:true}),300); };
+botao.onclick = () => abrirChat(!chat.classList.contains("on"));
+$("chat-fechar").onclick = () => abrirChat(false);
+document.addEventListener("keydown", e => { if(e.key==="Escape" && chat.classList.contains("on")) abrirChat(false); });
+$("atalhos").onclick = e => { const b=e.target.closest("button"); if(!b) return;
+  const textos={"Quero um orçamento grátis":"Olá, Samuel! Vim pelo site e quero um orçamento grátis. Vou te mandar uma foto do problema.","É uma emergência":"Olá, Samuel! É uma emergência, preciso de atendimento o quanto antes."};
+  campo.value = textos[b.textContent] || `Olá, Samuel! Vim pelo site e quero um orçamento de ${b.textContent.toLowerCase()}.`; campo.focus(); };
+campo.addEventListener("keydown", e => { if(e.key==="Enter" && !e.shiftKey){ e.preventDefault(); $("chat-form").requestSubmit(); } });
+campo.addEventListener("input", () => { campo.style.height="auto"; campo.style.height=Math.min(campo.scrollHeight,120)+"px"; });
+$("chat-form").onsubmit = e => { e.preventDefault();
+  const texto = campo.value.trim() || MSG_PADRAO;
+  window.open(zapLink(texto), "_blank", "noopener"); campo.value=""; campo.style.height="auto"; };
+// abre sozinho uma vez por visita, depois de alguns segundos
+let jaAbriu=false; try{ jaAbriu=sessionStorage.getItem("chatVisto")==="1"; }catch{}
+if(!jaAbriu && matchMedia("(min-width:700px)").matches) setTimeout(()=>{ if(!document.querySelector("dialog[open]")) abrirChat(true,false); try{ sessionStorage.setItem("chatVisto","1"); }catch{} },5000);
 </script>
 </body>
 </html>
